@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Cartas Merda</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Tela Inicial -->
+  <div class="screen" id="theme-selection-screen">
+    <h1>Escolha um Tema</h1>
+    <div class="themes-container">
+      <button class="theme-button" data-theme="friends">Entre Amigos</button>
+      <button class="theme-button" data-theme="plus18">+18</button>
+      <button class="theme-button" data-theme="drinks">Para Beber</button>
+    </div>
+  </div>
+
+  <!-- Tela do Jogo -->
+  <div class="screen hidden" id="game-screen">
+    <h1 id="theme-title">Tema: Entre Amigos</h1>
+    <div class="card" id="card">
+      <span id="question">Clique na carta para gerar uma pergunta!</span>
+    </div>
+    <button id="back-button">Voltar ao Menu</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

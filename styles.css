@@ -1,0 +1,185 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    color: #fff;
+    transition: background-color 0.5s ease, transform 0.3s ease;
+    overflow: hidden; /* Evita scroll desnecessário */
+    position: relative; /* Centralização absoluta */
+  }
+  
+  .screen {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+  }
+  
+  .hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .themes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+  
+  .theme-button {
+    background: linear-gradient(135deg, transparent, transparent); /* Placeholder */
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .theme-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Botões temáticos */
+  .theme-button[data-theme="friends"] {
+    background: linear-gradient(135deg, #87ceeb, #6495ed);
+  }
+  
+  .theme-button[data-theme="plus18"] {
+    background: linear-gradient(135deg, #ff4d4d, #b22222);
+  }
+  
+  .theme-button[data-theme="drinks"] {
+    background: linear-gradient(135deg, #50c878, #2e8b57);
+  }
+  
+  .card {
+    background-color: #fff;
+    border: none;
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: scale(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover::before {
+    transform: scale(1);
+  }
+  
+  #question {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    z-index: 1;
+  }
+  
+  #back-button {
+    margin-top: 20px;
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  #back-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Cores de fundo para os temas */
+  body.friends {
+    background: linear-gradient(135deg, #87ceeb, #6495ed);
+  }
+  
+  body.plus18 {
+    background: linear-gradient(135deg, #ff4d4d, #b22222);
+  }
+  
+  body.drinks {
+    background: linear-gradient(135deg, #50c878, #2e8b57);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 0.9rem;
+    }
+  
+    .card {
+      height: 150px;
+    }
+  
+    #question {
+      font-size: 1.2rem;
+    }
+  }
